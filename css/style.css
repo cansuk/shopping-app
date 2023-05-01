@@ -57,10 +57,14 @@ body {
     max-height: 437px;
     object-position: top;
   }
+  .container .content-main-container {
+    position: absolute;
+    height: 100vh;
+  }
   .container .content-container {
     position: absolute;
-    margin-top: 15.5rem;
-    margin-left: 1.5rem;
+    top: 17.05vh;
+    left: 1.65vw;
     width: calc(100vw - 1.5rem);
   }
   .container .content-container .mobile-content-heading {
@@ -104,41 +108,20 @@ body {
     justify-content: space-between;
     transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
   }
-  .container
-    .content-container
-    .content-slider
-    .cards-container
-    .content-slider-card {
+  .container .content-container .content-slider .cards-container .content-slider-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  .container
-    .content-container
-    .content-slider
-    .cards-container
-    .content-slider-card
-    .content-slider-card-img
-    > img {
+  .container .content-container .content-slider .cards-container .content-slider-card-img > img {
     max-width: 9.25rem;
   }
-  .container
-    .content-container
-    .content-slider
-    .cards-container
-    .content-slider-card
-    .content-slider-card-desc {
+  .container .content-container .content-slider .cards-container .content-slider-card .content-slider-card-desc {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
-  .container
-    .content-container
-    .content-slider
-    .cards-container
-    .content-slider-card
-    .content-slider-card-desc
-    .content-slider-card-desc-name {
+  .container .content-container .content-slider .cards-container .content-slider-card .content-slider-card-desc .content-slider-card-desc-name {
     margin-top: 0.75rem;
     font-style: normal;
     font-weight: 400;
@@ -146,13 +129,7 @@ body {
     line-height: 160%;
     height: 40px;
   }
-  .container
-    .content-container
-    .content-slider
-    .cards-container
-    .content-slider-card
-    .content-slider-card-desc
-    .content-slider-card-desc-price {
+  .container .content-container .content-slider .cards-container .content-slider-card .content-slider-card-desc .content-slider-card-desc-price {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -238,7 +215,7 @@ body {
     border-color: black;
   }
   .slider-left-arrow {
-    left: 0;
+    left: 1.5rem;
     visibility: hidden;
   }
   .slider-right-arrow {
@@ -257,18 +234,22 @@ body {
   .main-image-container > img {
     height: 100vh;
     object-fit: cover;
+    object-position: top;
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 50vw;
+  }
+  .content-main-container {
+    position: relative;
+    height: 100vh;
   }
   .content-container {
-    width: 50vw;
+    left: 57.75vw;
     position: absolute;
-    right: 0;
-    top: 0;
-    top: 6.6vw;
-    left: 58.25vw;
+    top: 50%;
+    transform: translate(0%, -50%);
+    margin: auto;
   }
   .content-heading {
     font-style: normal;
@@ -278,7 +259,7 @@ body {
     display: flex;
     align-items: flex-end;
     color: #000000;
-    max-width: 30.875rem;
+    max-width: 34vw;
   }
   .mobile-content-heading {
     display: none;
@@ -290,8 +271,8 @@ body {
     font-size: 1rem;
     line-height: 160%;
     color: #666666;
-    margin-top: 0.75rem;
-    max-width: 27rem;
+    margin-top: 0.8325vh;
+    max-width: 29.7vw;
   }
   .content-shop-link {
     font-family: "Avenir";
@@ -303,21 +284,21 @@ body {
     align-items: center;
     text-transform: capitalize;
     color: #000000;
-    margin-top: 2rem;
+    margin-top: 2.22vh;
     padding-bottom: 0.313rem;
     border-bottom: 1px solid black;
     width: fit-content;
     cursor: pointer;
   }
   .content-slider {
-    margin-top: 4.25rem;
+    position: relative;
+    margin-top: 4.7175vh;
     overflow: hidden;
-    width: 41.75vw;
   }
   .content-slider .cards-container {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 2.22vw;
     align-items: center;
     justify-content: space-between;
     transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
@@ -327,37 +308,23 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
-  .content-slider
-    .cards-container
-    .content-slider-card
-    .content-slider-card-img
-    > img {
-    max-width: 14.375rem;
+  .content-slider .cards-container .content-slider-card .content-slider-card-img > img {
+    width: 16vw;
   }
-  .content-slider
-    .cards-container
-    .content-slider-card
-    .content-slider-card-desc {
+  .content-slider .cards-container .content-slider-card .content-slider-card-desc {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
-  .content-slider
-    .cards-container
-    .content-slider-card
-    .content-slider-card-desc
-    .content-slider-card-desc-name {
-    margin-top: 0.75rem;
+  .content-slider .cards-container .content-slider-card .content-slider-card-desc .content-slider-card-desc-name {
+    margin-top: 0.8325vh;
     font-style: normal;
     font-weight: 400;
     font-size: 0.8rem;
     line-height: 160%;
+    height: 40px;
   }
-  .content-slider
-    .cards-container
-    .content-slider-card
-    .content-slider-card-desc
-    .content-slider-card-desc-price {
+  .content-slider .cards-container .content-slider-card .content-slider-card-desc .content-slider-card-desc-price {
     display: flex;
     justify-content: space-between;
     margin-top: 0.25;
@@ -402,9 +369,6 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
-  .content-slider-card-img > img {
-    max-width: 14.375rem;
-  }
   .cards-container {
     display: flex;
     flex-direction: row;
@@ -418,16 +382,13 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
-  .content-slider-card-img > img {
-    max-width: 14.375rem;
-  }
   .content-slider-card-desc {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
   .content-slider-card-desc-name {
-    margin-top: 0.75rem;
+    margin-top: 0.8325vh;
     font-style: normal;
     font-weight: 400;
     font-size: 0.8rem;
@@ -436,7 +397,7 @@ body {
   .content-slider-card-desc-price {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.25;
+    margin-top: 0.2775;
     font-style: normal;
     font-weight: 400;
     font-size: 0.8rem;
@@ -484,11 +445,9 @@ body {
   }
   .slider-arrows {
     position: absolute;
-    top: 60.5%;
+    top: 35%;
     left: 0;
     right: 0;
-    height: 100px;
-    width: 41.75vw;
   }
   .slider-arrows .slider-arrow {
     position: absolute;
@@ -510,11 +469,11 @@ body {
     border-color: black;
   }
   .slider-arrows .slider-arrow.slider-left-arrow {
-    left: 0;
+    left: 3.3vw;
     visibility: hidden;
   }
   .slider-arrows .slider-arrow.slider-right-arrow {
-    right: 3.3vw;
+    left: calc(38.95vw - 42px);
     visibility: hidden;
   }
 }
@@ -544,4 +503,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=built.css.map */
+/*# sourceMappingURL=style.css.map */

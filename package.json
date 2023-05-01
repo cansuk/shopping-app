@@ -1,0 +1,11 @@
+{
+  "name": "shopping-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/cansuk/shopping-app.git",
+  "author": "<cansukaluc234@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}

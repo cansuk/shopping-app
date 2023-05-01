@@ -2,7 +2,7 @@ const products = [
   {
     imgSrc: "assets/product1.svg",
     name: "365 Signature Hoodie",
-    price: "€ 33.95",
+    price: "€33.95",
     color: "blue",
     colorOptions: [
       { value: "blue" },
@@ -33,7 +33,7 @@ const products = [
   {
     imgSrc: "assets/product1.svg",
     name: "365 Signature Hoodie",
-    price: "Â€ 33.95",
+    price: "€33.95",
     color: "blue",
     colorOptions: [
       { value: "blue" },
@@ -61,7 +61,6 @@ const products = [
       { value: "green" },
     ],
   },
-
   {
     imgSrc: "assets/product2.svg",
     name: "Organic Skinny High Waist Jeans",
@@ -75,6 +74,6 @@ function GetProducts() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve({ products });
-    }, 1000);
+    }, 1500);
   });
 }

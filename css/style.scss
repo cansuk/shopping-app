@@ -54,8 +54,6 @@ $black-color: rgba(0, 0, 0, 0.1);
 $gray-color: #66666669;
 $loading-color: #83e861;
 
-$content-heading-max-width: 30.875rem;
-$content-desc-max-width: 27rem;
 $main-image-height: calc(100vh - 2.5rem);
 $transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
 $loading-animation-duration: 1.2s;
@@ -80,10 +78,15 @@ $loading-animation-duration: 1.2s;
       }
     }
 
+    .content-main-container {
+      position: absolute;
+      height: 100vh;
+    }
+
     .content-container {
       position: absolute;
-      margin-top: 15.5rem;
-      margin-left: 1.5rem;
+      top: 17.05vh;
+      left: 1.65vw;
       width: calc(100vw - 1.5rem);
 
       .mobile-content-heading {
@@ -136,7 +139,7 @@ $loading-animation-duration: 1.2s;
             flex-direction: column;
             align-items: flex-start;
 
-            .content-slider-card-img > img {
+            &-img > img {
               max-width: 9.25rem;
             }
 
@@ -262,7 +265,7 @@ $loading-animation-duration: 1.2s;
   }
 
   .slider-left-arrow {
-    left: 0;
+    left: 1.5rem;
     visibility: hidden;
   }
 
@@ -285,19 +288,24 @@ $loading-animation-duration: 1.2s;
   .main-image-container > img {
     height: 100vh;
     object-fit: cover;
+    object-position: top;
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 50vw;
+  }
+
+  .content-main-container {
+    position: relative;
+    height: 100vh;
   }
 
   .content-container {
-    width: 50vw;
+    left: 57.75vw;
     position: absolute;
-    right: 0;
-    top: 0;
-    top: 6.6vw;
-    left: 58.25vw;
+    top: 50%;
+    transform: translate(0%, -50%);
+    margin: auto;
   }
 
   .content-heading {
@@ -308,7 +316,7 @@ $loading-animation-duration: 1.2s;
     display: flex;
     align-items: flex-end;
     color: #000000;
-    max-width: $content-heading-max-width;
+    max-width: 34vw;
   }
 
   .mobile-content-heading {
@@ -322,8 +330,8 @@ $loading-animation-duration: 1.2s;
     font-size: 1rem;
     line-height: 160%;
     color: #666666;
-    margin-top: 0.75rem;
-    max-width: $content-desc-max-width;
+    margin-top: 0.8325vh;
+    max-width: 29.7vw;
   }
 
   .content-shop-link {
@@ -336,7 +344,7 @@ $loading-animation-duration: 1.2s;
     align-items: center;
     text-transform: capitalize;
     color: #000000;
-    margin-top: 2rem;
+    margin-top: 2.22vh;
     padding-bottom: 0.313rem;
     border-bottom: 1px solid black;
     width: fit-content;
@@ -344,14 +352,14 @@ $loading-animation-duration: 1.2s;
   }
 
   .content-slider {
-    margin-top: 4.25rem;
+    position: relative;
+    margin-top: 4.7175vh;
     overflow: hidden;
-    width: 41.75vw;
 
     .cards-container {
       display: flex;
       flex-direction: row;
-      gap: 2rem;
+      gap: 2.22vw;
       align-items: center;
       justify-content: space-between;
       transition: transform 0.3s $transition-timing-function;
@@ -362,7 +370,7 @@ $loading-animation-duration: 1.2s;
         align-items: flex-start;
 
         .content-slider-card-img > img {
-          max-width: 14.375rem;
+          width: 16vw;
         }
 
         .content-slider-card-desc {
@@ -371,11 +379,12 @@ $loading-animation-duration: 1.2s;
           width: 100%;
 
           .content-slider-card-desc-name {
-            margin-top: 0.75rem;
+            margin-top: 0.8325vh;
             font-style: normal;
             font-weight: 400;
             font-size: 0.8rem;
             line-height: 160%;
+            height: 40px;
           }
 
           .content-slider-card-desc-price {
@@ -434,10 +443,6 @@ $loading-animation-duration: 1.2s;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    &-img > img {
-      max-width: 14.375rem;
-    }
   }
 
   .cards-container {
@@ -454,17 +459,13 @@ $loading-animation-duration: 1.2s;
     flex-direction: column;
     align-items: flex-start;
 
-    &-img > img {
-      max-width: 14.375rem;
-    }
-
     &-desc {
       display: flex;
       flex-direction: column;
       width: 100%;
 
       &-name {
-        margin-top: 0.75rem;
+        margin-top: 0.8325vh;
         font-style: normal;
         font-weight: 400;
         font-size: 0.8rem;
@@ -474,7 +475,7 @@ $loading-animation-duration: 1.2s;
       &-price {
         display: flex;
         justify-content: space-between;
-        margin-top: 0.25;
+        margin-top: 0.2775;
         font-style: normal;
         font-weight: 400;
         font-size: 0.8rem;
@@ -533,11 +534,9 @@ $loading-animation-duration: 1.2s;
 
   .slider-arrows {
     position: absolute;
-    top: 60.5%;
+    top: 35%;
     left: 0;
     right: 0;
-    height: 100px;
-    width: 41.75vw;
 
     .slider-arrow {
       position: absolute;
@@ -561,12 +560,12 @@ $loading-animation-duration: 1.2s;
       }
 
       &.slider-left-arrow {
-        left: 0;
+        left: 3.3vw;
         visibility: hidden;
       }
 
       &.slider-right-arrow {
-        right: 3.3vw;
+        left: calc(42.25vw - 3.3vw - 42px);
         visibility: hidden;
       }
     }

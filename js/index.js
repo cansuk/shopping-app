@@ -6,8 +6,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function CreateSliderElements() {
   const cardsContainer = document.createElement("div");
   cardsContainer.classList.add("cards-container");
+  const loadingItem = document.querySelector(".loader-container");
 
   const { products } = await GetProducts();
+  loadingItem.style.display = "none";
+  document.querySelector(".slider-right-arrow").style.visibility = "visible";
+
   products?.forEach((product) => {
     const cardItem = document.createElement("div");
     cardItem.classList.add("content-slider-card");
@@ -33,7 +37,7 @@ async function CreateSliderElements() {
         const outerCircle = document.createElement("div");
         outerCircle.classList.add("outer-circle");
         const innerCircle = document.createElement("div");
-        innerCircle.classList.add(`${color.value}-selected`, "selected-circle");
+        innerCircle.classList.add(`${color.value}`, "selected-circle");
 
         outerCircle.appendChild(innerCircle);
         colorOptionsItem.appendChild(outerCircle);
@@ -65,23 +69,38 @@ function AddSliderEvents() {
 
   let slideIndex = 0;
   const sliderChildrenLength = sliderCardsContainer.children.length;
+  const slideCount = parseInt(sliderChildrenLength / 2);
+
+  function toggleSliderBtnDisplay(index) {
+    if (index === slideCount) {
+      document.querySelector(".slider-right-arrow").style.visibility = "hidden";
+    } else {
+      document.querySelector(".slider-right-arrow").style.visibility =
+        "visible";
+    }
+    if (index === 0) {
+      document.querySelector(".slider-left-arrow").style.visibility = "hidden";
+    } else {
+      document.querySelector(".slider-left-arrow").style.visibility = "visible";
+    }
+  }
 
   function slideTo(index) {
-    sliderCardsContainer.style.transform = `translateX(-${index * 20}%)`;
+    toggleSliderBtnDisplay(index);
+    sliderCardsContainer.style.transform = `translateX(-${index * 30}%)`;
     slideIndex = index;
   }
 
   btnPrev.addEventListener("click", () => {
     if (slideIndex > 0) {
-      slideTo(slideIndex - 2);
+      slideTo(slideIndex - 1);
     }
   });
 
   btnNext.addEventListener("click", () => {
     if (slideIndex <= sliderChildrenLength + 1) {
-      document.querySelector(".slider-left-arrow ").style.visibility =
-        "visible";
-      slideTo(slideIndex + 2);
+      btnPrev.style.visibility = "visible";
+      slideTo(slideIndex + 1);
     }
   });
 }
